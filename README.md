@@ -26,7 +26,8 @@ cd rest-api-project
 ```
 
 2. **Instalar as dependências**
-```npm install
+```
+npm install
 ```
 
 3. **Configure o banco de dados SQLite e Prisma:**
