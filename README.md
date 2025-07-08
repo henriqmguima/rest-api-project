@@ -30,7 +30,7 @@ npm install
 3. **Configure o banco de dados SQLite e Prisma:**
 ```npx prisma init --datasource-provider sqlite```
 
-4. **Altere o arquivo .env:**
+4. **Crie o arquivo .env com:**
 ```bash
 DATABASE_URL="file:./dev.db"
 JWT_SECRET="sua-chave-super-secreta"
