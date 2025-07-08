@@ -62,6 +62,7 @@ Você pode criar manualmente um admin de duas formas:
 
 Edite o campo role do usuário desejado para ```"admin"```.
 
+Outra opção é atualizar o campo role através do método PUT da rota `/api/users:id`
 ---
 
 ## 🔐 Autenticação JWT
@@ -88,6 +89,8 @@ Use esse token nas requisições protegidas adicionando o header:
 | POST   | `/api/register`  | Cria um novo usuário (user)     | Pública           |
 | POST   | `/api/login`     | Login e geração de token JWT    | Pública           |
 | GET    | `/api/users`     | Lista todos os usuários         | Somente admin     |
+| PUT    | `/api/users:id`  | Atualiza um usuário             | Somente admin     |
+| DELETE | `/api/users:id`  | Deleta um usuário               | Somente admin     |
 
 ---
 

@@ -68,3 +68,47 @@ export const listAllUsers = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Erro ao listar usuários' });
   }
 };
+
+export const updateUser = async (req: Request, res: Response) => {
+  const userId = parseInt(req.params.id);
+
+  const { name, role } = req.body;
+
+  try {
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    if (!user) return res.status(404).json({ error: 'Usuário não encontrado' });
+
+    const updatedUser = await prisma.user.update({
+      where: { id: userId },
+      data: {
+        name: name ?? user.name,
+        role: role ?? user.role,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+      },
+    });
+
+    res.json({ message: 'Usuário atualizado com sucesso', user: updatedUser });
+  } catch (err: any) {
+    res.status(500).json({ error: 'Erro ao atualizar usuário' });
+  }
+};
+
+export const deleteUser = async (req: Request, res: Response) => {
+  const userId = parseInt(req.params.id);
+
+  try {
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    if (!user) return res.status(404).json({ error: 'Usuário não encontrado' });
+
+    await prisma.user.delete({ where: { id: userId } });
+
+    res.status(204).send(); // No content
+  } catch (err: any) {
+    res.status(500).json({ error: 'Erro ao deletar usuário' });
+  }
+};
