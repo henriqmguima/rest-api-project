@@ -27,7 +27,7 @@ cd rest-api-project
 npm install
 ```
 
-3. **Crie o arquivo .env com:**
+3. **Altere o arquivo .env com:**
 ```bash
 DATABASE_URL="file:./dev.db"
 JWT_SECRET="sua-chave-super-secreta"
