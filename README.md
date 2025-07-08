@@ -36,7 +36,6 @@ JWT_SECRET="sua-chave-super-secreta"
 4. **Gere o banco de dados:**
 ```bash
 npx prisma migrate dev --name init
-npx prisma migrate dev --name add_tasks
 ```
 
 5. **Inicie o servidor em modo desenvolvimento:**
