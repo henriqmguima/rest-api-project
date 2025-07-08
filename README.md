@@ -10,9 +10,6 @@ Este é um projeto de API RESTful desenvolvido com **Node.js**, **TypeScript**, 
 - SQLite
 - JSON Web Token (JWT)
 - Zod (validação)
-- Bcrypt (criptografia de senhas)
-- dotenv
-- ts-node-dev
 
 ---
 
