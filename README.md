@@ -27,22 +27,19 @@ cd rest-api-project
 npm install
 ```
 
-3. **Configure o banco de dados SQLite e Prisma:**
-```npx prisma init --datasource-provider sqlite```
-
-4. **Crie o arquivo .env com:**
+3. **Crie o arquivo .env com:**
 ```bash
 DATABASE_URL="file:./dev.db"
 JWT_SECRET="sua-chave-super-secreta"
 ```
 
-5. **Gere o banco de dados:**
+4. **Gere o banco de dados:**
 ```bash
 npx prisma migrate dev --name init
 npx prisma migrate dev --name add_tasks
 ```
 
-6. **Inicie o servidor em modo desenvolvimento:**
+5. **Inicie o servidor em modo desenvolvimento:**
 ```npm run dev```
 
 ---
